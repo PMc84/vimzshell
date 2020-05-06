@@ -19,6 +19,8 @@ set laststatus=2
 syntax on
 syntax enable
 
+" start pathoen
+execute pathogen#infect()
 
 " Yaml indenting
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -30,13 +32,13 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Plugins
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'scrooloose/nerdtree'
 
-call plug#end()
+" call plug#end()
 
 " NERDTree shortcut key
 " " Nerd Tree
