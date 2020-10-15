@@ -15,12 +15,18 @@ set noswapfile
 set autoread
 set cursorline
 set laststatus=2
+set title
+set backspace=indent,eol,start
+set t_Co=256
+set modifiable
 
 syntax on
 syntax enable
 
-" start pathoen
+" start pathogen
 execute pathogen#infect()
+filetype plugin indent on
+
 
 " Yaml indenting
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -34,14 +40,17 @@ noremap <Right> <NOP>
 " Plugins
 " call plug#begin('~/.vim/plugged')
 
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'scrooloose/nerdtree'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_x = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_section_b = '%{FugitiveStatusline()}'
+let g:airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+let g:airline_theme='jellybeans'
 
-" call plug#end()
 
 " NERDTree shortcut key
 " " Nerd Tree
 let NERDTreeDirArrows = 1
 nmap <C-n> :NERDTreeToggle<CR>
-set modifiable
