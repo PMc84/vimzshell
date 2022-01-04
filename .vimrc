@@ -54,3 +54,10 @@ let g:airline_theme='jellybeans'
 " " Nerd Tree
 let NERDTreeDirArrows = 1
 nmap <C-n> :NERDTreeToggle<CR>
+
+let g:syntastic_ruby_checkers = 'rubocop'
+let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/cookstyle'
+
+let g:terraform_align=1
+let g:terraform_fold_sections=0
+let g:terraform_fmt_on_save=1
